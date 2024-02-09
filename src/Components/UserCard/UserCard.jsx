@@ -9,7 +9,7 @@ const UserCard = ({ user }) => {
                src={user?.image}
                alt="Avatar"
             />
-            <Link to={user?.id} className="text-sm text-primary">
+            <Link to={`/${user?.id}`} className="text-sm text-primary">
                View Profile
             </Link>
          </div>
