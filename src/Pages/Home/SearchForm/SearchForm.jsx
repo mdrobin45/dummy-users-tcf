@@ -1,4 +1,4 @@
-const SearchForm = () => {
+const SearchForm = ({ handleSearchForm }) => {
    return (
       <form className="mb-4 w-2/4 mx-auto">
          <label
@@ -24,17 +24,17 @@ const SearchForm = () => {
                </svg>
             </div>
             <input
+               onChange={handleSearchForm}
                type="search"
-               id="default-search"
                className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none bg-gray-50 focus:ring-primary focus:border-primary "
-               placeholder="Search Mockups, Logos..."
+               placeholder="Search users by username"
                required
             />
-            <button
+            {/* <button
                type="submit"
                className="text-white absolute end-2.5 bottom-2.5 bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                Search
-            </button>
+            </button> */}
          </div>
       </form>
    );
