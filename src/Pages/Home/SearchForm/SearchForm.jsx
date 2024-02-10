@@ -1,4 +1,4 @@
-const SearchForm = ({ handleSearchForm }) => {
+const SearchForm = ({ handleSearchForm, handleSortBy }) => {
    return (
       <form className="mb-4 w-2/4 mx-auto">
          <label
@@ -23,18 +23,26 @@ const SearchForm = ({ handleSearchForm }) => {
                   />
                </svg>
             </div>
-            <input
-               onChange={handleSearchForm}
-               type="search"
-               className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none bg-gray-50 focus:ring-primary focus:border-primary "
-               placeholder="Search users by username"
-               required
-            />
-            {/* <button
-               type="submit"
-               className="text-white absolute end-2.5 bottom-2.5 bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-               Search
-            </button> */}
+            <div className="flex items-center gap-2">
+               <input
+                  onChange={handleSearchForm}
+                  type="search"
+                  className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none bg-gray-50 focus:ring-primary focus:border-primary "
+                  placeholder="Search users by username"
+                  required
+               />
+               <select
+                  onChange={handleSortBy}
+                  id="countries"
+                  className="bg-gray-50 w-32 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-primary focus:border-primary block p-4 ">
+                  <option value="none" selected>
+                     Sort By
+                  </option>
+                  <option value="name">Name</option>
+                  <option value="email">Email</option>
+                  <option value="company">Company</option>
+               </select>
+            </div>
          </div>
       </form>
    );
