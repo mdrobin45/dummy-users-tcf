@@ -8,7 +8,6 @@ import SearchForm from "./SearchForm/SearchForm";
 const Home = () => {
    const [searchText, setSearchText] = useState("");
    const [displayUsers, setDisplayUsers] = useState([]);
-   const [sortBy, setSortBy] = useState("");
 
    const { isPending, data } = useQuery({
       queryKey: ["users"],
@@ -42,7 +41,6 @@ const Home = () => {
    // Handle sort by
    const handleSortBy = (e) => {
       const sortValue = e.target.value;
-      setSortBy(sortValue);
 
       // name sort
       const nameSort = (a, b) => {
